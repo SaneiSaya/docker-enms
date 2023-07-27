@@ -49,7 +49,6 @@ Create two files: settings.json and scheduler.json inside the files directory:
 ```
 Copy code
 touch /data/docker/eNMS/files/settings.json
-touch /data/docker/eNMS/files/scheduler.json
 ```
 Populate settings.json and scheduler.json with your preferred configuration values.
 
