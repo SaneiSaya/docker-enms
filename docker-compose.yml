@@ -1,0 +1,39 @@
+version: '3.8'
+services:
+  enms:
+    container_name: enms
+    image: saneisaya/enms:latest
+    restart: always
+    volumes:
+      - /data/docker/projects:/root/projects
+      - /data/docker/eNMS:/eNMS
+      - ./scheduler.json:/eNMS/scheduler.json
+      - ./authentication.json:/eNMS/authentication.json
+      - ./configuration.json:/eNMS/configuration.json
+      - ./project.json:/eNMS/project.json
+      - ./service.json:/eNMS/service.json
+      - ./slack.json:/eNMS/slack.json
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.enms.rule=Host(`your.domain`)"
+      - "traefik.http.routers.enms.entrypoints=enms"
+#      - "traefik.http.routers.enms.tls.certresolver=myresolver"
+      - "traefik.http.services.enms.loadbalancer.server.port=5000"
+    networks:
+      - traefik_proxy
+    depends_on:
+      db:
+        condition: service_started
+  db:
+    image: mariadb:10.5
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=root_password
+      - MYSQL_DATABASE=enms
+      - MYSQL_USER=enms
+      - MYSQL_PASSWORD=enms_password
+    volumes:
+      - /data/docker/db_data:/var/lib/mysql
+networks:
+  traefik_proxy:
+    external: true
