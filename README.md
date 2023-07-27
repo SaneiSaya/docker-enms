@@ -17,7 +17,7 @@ git clone <repository-url>
 cd <repository-name>
 ```
 
-Step 2: Create a .env File
+### Step 2: Create a .env File
 ```
 In the root of the project, create a .env file using the example to store your environment variables:
 
@@ -36,14 +36,14 @@ echo "UNSEAL_VAULT_KEY3=<your-unseal-key3>" >> .env
 ```
 Replace <your-enms-password>, <your-unseal-key1>, <your-unseal-key2>, <your-unseal-key3> with your actual values.
 
-Step 3: Create the Directories for Volumes
+### Step 3: Create the Directories for Volumes
 Create the directories that will be used by Docker as volumes, such as /data/docker:
 
 ```
 Copy code
 mkdir -p /data/docker/eNMS/{files,logs,db}
 ```
-Step 4: Create settings.json and scheduler.json Files
+### Step 4: Create settings.json and scheduler.json Files
 Create two files: settings.json and scheduler.json inside the files directory:
 
 ```
@@ -53,7 +53,7 @@ touch /data/docker/eNMS/files/scheduler.json
 ```
 Populate settings.json and scheduler.json with your preferred configuration values.
 
-Step 5: Start the Docker Containers
+### Step 5: Start the Docker Containers
 Run the following command in the same directory as your docker-compose.yml file to start your containers:
 
 ```
