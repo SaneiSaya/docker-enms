@@ -1,0 +1,17 @@
+{
+  "database_type": "mysql+pymysql",
+  "database_user": "root",
+  "database_password": "root_password",
+  "database_address": "db",
+  "database_name": "enms",
+  "authentication": {
+    "method": "database",
+    "openldap": {
+      "address": "ldap://ldap.example.com",
+      "base_dn": "dc=example,dc=com"
+    }
+  },
+  "slack": {
+    "token": "your_slack_token_here"
+  }
+}
