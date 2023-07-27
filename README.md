@@ -13,8 +13,8 @@ These instructions assume you are deploying on a Linux machine and have Docker, 
 You need to clone the repository where you've stored the Dockerfile and docker-compose.yml:
 
 ```sh
-git clone <repository-url>
-cd <repository-name>
+git clone [<repository-url>](https://github.com/SaneiSaya/docker-enms)
+cd docker-enms
 ```
 
 ### Step 2: Create a .env File
