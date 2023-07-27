@@ -18,7 +18,7 @@ cd <repository-name>
 ```
 
 ### Step 2: Create a .env File
-```
+
 In the root of the project, create a .env file using the example to store your environment variables:
 
 ```
