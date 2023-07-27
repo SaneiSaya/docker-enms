@@ -65,3 +65,12 @@ Your custom eNMS application should now be up and running and accessible via you
 
 
 Again, don't forget to replace `<your-enms-password>`, `<your-unseal-key1>`, `<your-unseal-key2>`, `<your-unseal-key3>` with your actual values.
+
+## Acknowledgments
+
+This project uses the following open-source packages:
+
+- [eNMS](https://github.com/afourmy/eNMS): Enterprise Network Management System
+
+We would like to express our gratitude to the developers and maintainers of these projects.
+
